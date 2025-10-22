@@ -20,7 +20,7 @@ void draw_firmware_version()
     GetHAL().display.loadFont(font_montserrat_medium_36);
     GetHAL().display.setTextDatum(middle_center);
     GetHAL().display.setTextColor(TFT_BLACK);
-    GetHAL().display.drawString("FactoryTest: V0.4", GetHAL().display.width() / 2, GetHAL().display.height() / 2);
+    GetHAL().display.drawString("FactoryTest: V0.5", GetHAL().display.width() / 2, GetHAL().display.height() / 2);
 }
 
 void draw_gray_scale_bars()
