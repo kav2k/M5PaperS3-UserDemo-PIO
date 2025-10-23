@@ -20,7 +20,7 @@ void draw_firmware_version()
     GetHAL().display.loadFont(font_montserrat_medium_36);
     GetHAL().display.setTextDatum(middle_center);
     GetHAL().display.setTextColor(TFT_BLACK);
-    GetHAL().display.drawString("FactoryTest: V0.4", GetHAL().display.width() / 2, GetHAL().display.height() / 2);
+    GetHAL().display.drawString("FactoryTest: V0.5", GetHAL().display.width() / 2, GetHAL().display.height() / 2);
 }
 
 void draw_gray_scale_bars()
@@ -36,6 +36,23 @@ void draw_gray_scale_bars()
         GetHAL().display.fillRect(i * 60, 0, 60, 540, colors[i]);
     }
     GetHAL().display.endWrite();
+}
+
+void boot_display_test()
+{
+    draw_firmware_version();
+    GetHAL().delay(1000);
+
+    GetHAL().display.setEpdMode(epd_mode_t::epd_quality);
+    GetHAL().display.fillScreen(TFT_BLACK);
+    GetHAL().delay(2000);
+
+    GetHAL().display.setEpdMode(epd_mode_t::epd_quality);
+    GetHAL().display.fillScreen(TFT_WHITE);
+    GetHAL().delay(2000);
+
+    draw_gray_scale_bars();
+    GetHAL().delay(2000);
 }
 
 void check_full_display_refresh_request(bool force = false)
@@ -60,11 +77,7 @@ extern "C" void app_main(void)
 
     GetHAL().init();
 
-    draw_firmware_version();
-    GetHAL().delay(2000);
-
-    draw_gray_scale_bars();
-    GetHAL().delay(3000);
+    boot_display_test();
 
     // Install apps
     GetMooncake().installApp(std::make_unique<AppPower>());
