@@ -2,29 +2,13 @@
 
 User demo source code of [PaperS3](https://docs.m5stack.com/en/core/PaperS3).
 
+Converted to work with PlatformIO.
+
 ## Build
 
-### Fetch Dependencies
+Just let PIO do its thing.
 
-```bash
-python ./fetch_repos.py
-```
-
-### Tool Chains
-
-[ESP-IDF v5.3.3](https://docs.espressif.com/projects/esp-idf/en/v5.3.3/esp32s3/index.html)
-
-### Build
-
-```bash
-idf.py build
-```
-
-### Flash
-
-```bash
-idf.py flash
-```
+Originally built with ESP-IDF 5.3.3, this version is building with 5.3.1
 
 ## Acknowledgments
 
