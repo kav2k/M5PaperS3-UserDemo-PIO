@@ -10,7 +10,7 @@ Fetch dependencies with `python fetch_repos.py`.
 
 Then just let PIO do its thing.
 
-Originally built with ESP-IDF 5.3.3, this version is building with 5.3.1
+Originally built with ESP-IDF 5.3.3, this version is building with 5.5.0 (with updates to underlying libraries).
 
 ## Acknowledgments
 
